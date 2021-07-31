@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OtomatikMuhendis.TRIdentity.Api.csproj" />
+    <ProjectReference Include="..\OtomatikMuhendis.TRIdentity.Api\OtomatikMuhendis.TRIdentity.Api.csproj" />
   </ItemGroup>
 
 </Project>

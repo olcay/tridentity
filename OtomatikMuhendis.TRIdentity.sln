@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtomatikMuhendis.TRIdentity.Api", "OtomatikMuhendis.TRIdentity.Api.csproj", "{12A55156-A83B-4B80-8BC6-B210AE226450}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtomatikMuhendis.TRIdentity.Api", "OtomatikMuhendis.TRIdentity.Api\OtomatikMuhendis.TRIdentity.Api.csproj", "{12A55156-A83B-4B80-8BC6-B210AE226450}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtomatikMuhendis.TRIdentity.Tests", "OtomatikMuhendis.TRIdentity.Tests\OtomatikMuhendis.TRIdentity.Tests.csproj", "{0D9910EA-E177-46B1-8B55-9FFEB06D69A4}"
 EndProject
