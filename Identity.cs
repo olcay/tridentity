@@ -2,13 +2,13 @@ namespace OtomatikMuhendis.TRIdentity.Api
 {
     public class Identity
     {
-        public string Number { get; set; }
+        public string Number { get; private set; }
 
-        public string FirstName { get; set; }
+        public string FirstName { get; private set; }
 
-        public string LastName { get; set; }
+        public string LastName { get; private set; }
 
-        public int Birthyear { get; set; }
+        public int Birthyear { get; private set; }
 
         public Identity(string number)
         {
@@ -16,8 +16,8 @@ namespace OtomatikMuhendis.TRIdentity.Api
         }
 
         public Identity(string number, string firstName, string lastName, int birthyear)
+            : this(number)
         {
-            Number = number;
             FirstName = firstName.Trim().ToUpperInvariant();
             LastName = lastName.Trim().ToUpperInvariant();
             Birthyear = birthyear;
@@ -25,16 +25,12 @@ namespace OtomatikMuhendis.TRIdentity.Api
 
         public bool IsNumberValid()
         {
-            int sumEven = 0, sumOdd = 0, sumFirst10 = 0, i = 0;
+            if (string.IsNullOrWhiteSpace(Number) || Number.Length != 11 || Number.StartsWith('0'))
+            {
+                return false;
+            }
 
-            if (Number.Length != 11)
-            {
-                return false;
-            }
-            if (Number[0] == '0')
-            {
-                return false;
-            }
+            int sumEven = 0, sumOdd = 0, sumFirst10 = 0, i = 0;
 
             while (i <= 8)
             {

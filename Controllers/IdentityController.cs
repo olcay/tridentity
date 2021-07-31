@@ -19,14 +19,29 @@ namespace OtomatikMuhendis.TRIdentity.Api.Controllers
             _nviService = nviService;
         }
 
+        /// <summary>
+        /// Validate an identity number
+        /// </summary>
+        /// <param name="identityNumber">An identity number</param>
+        /// <returns>Validation result and a message in case of en exception</returns>
         [HttpGet("validate")]
-        public Response Validate([FromRoute, Required, StringLength(11, MinimumLength = 11)] string identityNumber)
+        public Response Validate(
+            [FromRoute, Required, StringLength(11, MinimumLength = 11)] string identityNumber)
         {
             var identity = new Identity(identityNumber);
 
             return new Response { IsValid = identity.IsNumberValid() };
         }
 
+        /// <summary>
+        /// Verify an identity number using the webservice
+        /// </summary>
+        /// <param name="identityNumber">An identity number</param>
+        /// <param name="firstName">First Name</param>
+        /// <param name="lastName">Last Name</param>
+        /// <param name="birthyear">Year</param>
+        /// <param name="cancellationToken">Propagates notification that operations should be canceled.</param>
+        /// <returns>Validation result and a message in case of en exception</returns>
         [HttpGet("verify")]
         public async Task<Response> Verify(
             [FromRoute, Required, StringLength(11, MinimumLength = 11)] string identityNumber, 
